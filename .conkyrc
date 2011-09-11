@@ -1,0 +1,137 @@
+# set to yes if you want Conky to be forked in the background
+background yes
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+#xftfont Trebuchet MS:size=10
+xftfont Mono:size=10
+
+# Text alpha when using Xft
+xftalpha 1
+
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+own_window no
+own_window_transparent yes
+own_window_type override
+#own_window_type desktop
+#own_window_type normal #use this if you want a nice shadow to appear around conky
+
+# If own_window is yes_ these window manager hints may be used
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker_ may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 1200 760
+
+# Maximum width
+maximum_width 1280
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders no
+
+# Stippled borders?
+# stippled_borders 8
+
+# border margins
+# border_margin 2
+
+# border width
+# border_width 1
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+
+# Text alignment_ other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+#alignment none
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 0
+gap_y 0
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+##############################################
+##############################################
+
+TEXT
+${voffset 24}${offset 1010}${color 999999}Host:${tab 64}$nodename
+${offset 1010}Uptime:${tab 64}$uptime
+${offset 1010}
+${offset 1010}${color ffffff}SYSTEM:
+${offset 1010}${color ffee00}${cpugraph cpu0 20,232}
+${offset 1010}CPU 1:${tab 64}${cpu cpu1}%${tab 168}${freq_g 1}GHz
+${offset 1010}CPU 2:${tab 64}${cpu cpu2}%${tab 168}${freq_g 2}GHz
+${offset 1010}${color ff9900}${memgraph 20,232}
+${offset 1010}${membar 5,232}
+${offset 1010}RAM:${tab 64}$mem${tab 168}$memmax
+${offset 1010}${color 660000}Swap:${tab 64}$swap${tab 168}$swapmax
+${offset 1010}
+${offset 1010}${color ffffff}NETWORK:
+${offset 1010}${color 00ff00}${downspeedgraph wlan0 20,232}
+${offset 1010}Download:${tab 64}${downspeedf wlan0} kB/s
+${offset 1010}${color 0000ff}${upspeedgraph wlan0 20,232}
+${offset 1010}Upload:${tab 64}${upspeedf wlan0} kB/s
+${offset 1010}
+${offset 1010}${color ffffff}DISK:
+${offset 1010}${color 00ff00}${diskiograph_read sda 20,232}
+${offset 1010}Read:${tab 64}${diskio_read}
+${offset 1010}${color ff0000}${diskiograph_write sda 20,232}
+${offset 1010}Write:${tab 64}${diskio_write}
+${offset 1010}
+${offset 1010}${color ffffff}Usage:
+${offset 1010}${color 0000ff}${fs_bar 5,232 /}
+${offset 1010}/    ${tab 64}${fs_used /}${tab 168}${fs_size /}
+${offset 1010}free:${tab 64}${fs_free /}${tab 168}${fs_free_perc /}%
+${offset 1010}${color 00ff00}${fs_bar 5,232 /home}
+${offset 1010}/home${tab 64}${fs_used /home}${tab 168}${fs_size /home}
+${offset 1010}free:${tab 64}${fs_free /home}${tab 168}${fs_free_perc /home}%
+
+
+${voffset 10}${color cccccc}${font Sans:size=7}BAT:${battery_percent}%
+${voffset -8}${color 993300}${cpugraph cpu0 20,40}
+${voffset -18}${color ffee66}${font Sans:size=7}⚒ ${cpu cpu0}%
+${voffset -1}${color 006600}${downspeedgraph wlan0 20,40}
+${voffset -18}${color 66ff66}${font Sans:size=8}↓${downspeedf wlan0}
+${voffset -2}${color 000066}${upspeedgraph wlan0 20,40}
+${voffset -20}${color 6666ff}${font Sans:size=8}↑${upspeedf wlan0}
+
+
+
