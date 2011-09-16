@@ -8,7 +8,8 @@ prompt_style=$reset_style
 command_style=$reset_style'\[\033[1;29m\]' # bold black
 # Prompt variable:
 
-PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h:\w\$'"$command_style "
+OLD_PS1="$PS1"
+PS1="$status_style"'$fill \t\n'"$prompt_style$OLD_PS1$command_style"
 
 # Reset color for command output
 # (this one is invoked every time before a command is executed):
