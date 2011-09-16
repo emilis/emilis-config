@@ -30,7 +30,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+force_color_prompt=no
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -44,28 +44,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
-if [ "$color_prompt" = yes ]; then
-
-    # Fill with minuses
-    # (this is recalculated every time the prompt is shown in function prompt_command):
-    fill="--- "
-
-    reset_style='\[\033[00m\]'
-    status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
-    prompt_style=$reset_style
-    command_style=$reset_style'\[\033[1;29m\]' # bold black
-
-    # Prompt variable:
-    PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h:\w\$'"$command_style "
-
-    # Reset color for command output
-    # (this one is invoked every time before a command is executed):
-    trap 'echo -ne "\e[0m"' DEBUG 
-
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -77,19 +57,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-function prompt_command {
-
-    # create a $fill of all screen width minus the time string and a space:
-    let fillsize=${COLUMNS}-9
-    fill=""
-    while [ "$fillsize" -gt "0" ]
-    do
-        fill="-${fill}" # fill with underscores to work on 
-        let fillsize=${fillsize}-1
-    done
-   
-}
-PROMPT_COMMAND=prompt_command
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -109,6 +76,8 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+
+# Tweaked prompt.
 if [ -f "$HOME/.bash_ps1" ]; then
     . "$HOME/.bash_ps1"
 fi
