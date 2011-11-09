@@ -35,12 +35,32 @@ border_color = #000000 100
 #---------------------------------------------
 panel_monitor = 1
 panel_position = top left vertical
+panel_items = CSTB
 panel_size = 720 40
 panel_margin = 1 0
 panel_padding = 2 0
 font_shadow = 0
 panel_background_id = 1
 wm_menu = 1
+
+#---------------------------------------------
+# CLOCK
+#---------------------------------------------
+time1_format = %H:%M
+time1_font = sans 9
+time2_format = %m-%d
+time2_font = sans 7
+clock_font_color = #fffff8 80
+clock_padding = 1 0
+clock_background_id = 0
+#clock_lclick_command = gsimplecal
+clock_rclick_command = orage
+
+#---------------------------------------------
+# SYSTRAYBAR
+#---------------------------------------------
+systray_padding = 0 1 1
+systray_background_id = 0
 
 #---------------------------------------------
 # TASKBAR
@@ -64,25 +84,6 @@ task_font_color = #ffffff 70
 task_active_font_color = #ffffff 85
 task_background_id = 0
 task_active_background_id = 3
-
-#---------------------------------------------
-# SYSTRAYBAR
-#---------------------------------------------
-systray_padding = 0 1 1
-systray_background_id = 0
-
-#---------------------------------------------
-# CLOCK
-#---------------------------------------------
-time1_format = %H:%M
-time1_font = sans 9
-time2_format = %m-%d
-time2_font = sans 7
-clock_font_color = #fffff8 80
-clock_padding = 1 0
-clock_background_id = 0
-clock_lclick_command = gsimplecal
-#clock_rclick_command = orage
 
 #---------------------------------------------
 # BATTERY
