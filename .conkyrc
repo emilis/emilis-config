@@ -125,8 +125,8 @@ ${offset 1010}/home${tab 64}${fs_used /home}${tab 168}${fs_size /home}
 ${offset 1010}free:${tab 64}${fs_free /home}${tab 168}${fs_free_perc /home}%
 
 
-${voffset 10}${color cccccc}${font Sans:size=7}BAT:${battery_percent}%
-${voffset -8}${color 993300}${cpugraph cpu0 20,40}
+# ${voffset 10}${color cccccc}${font Sans:size=7}BAT:${battery_percent}%
+${voffset 8}${color 993300}${cpugraph cpu0 20,40}
 ${voffset -18}${color ffee66}${font Sans:size=7}⚒ ${cpu cpu0}%
 ${voffset -1}${color 006600}${downspeedgraph wlan0 20,40}
 ${voffset -18}${color 66ff66}${font Sans:size=8}↓${downspeedf wlan0}

@@ -27,7 +27,7 @@ border_color = #ccccc0 100
 # 4 - dark green background with no border
 rounded = 0
 border_width = 0
-background_color = #66ff66 100
+background_color = #006600 100
 border_color = #000000 100
 
 #---------------------------------------------
@@ -93,7 +93,7 @@ battery_low_status = 10
 battery_low_cmd = notify-send "battery low"
 bat1_font = sans 8
 bat2_font = sans 6
-battery_font_color = #fffff8 60
+battery_font_color = #66ff66 85
 battery_padding = 1 0
 battery_background_id = 4
 
