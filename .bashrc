@@ -78,6 +78,6 @@ fi
 
 
 # Tweaked prompt.
-if [ -f "$HOME/.bash_ps1" ]; then
+if [ -n "$PS1" -a -f "$HOME/.bash_ps1" ]; then
     . "$HOME/.bash_ps1"
 fi
