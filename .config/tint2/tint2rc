@@ -33,7 +33,7 @@ border_color = #000000 100
 #---------------------------------------------
 # PANEL
 #---------------------------------------------
-panel_monitor = 1
+panel_monitor = all
 panel_position = top left vertical
 panel_items = CSTB
 panel_size = 720 40
