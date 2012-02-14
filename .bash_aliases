@@ -19,6 +19,8 @@ alias l='ls -CF'
 alias ..='cd ..'
 
 # dev aliases
+alias ':e'='vim'
+alias ':WM'='make'
 alias lessc='nodejs /opt/lessc/bin/lessc'
 
 
