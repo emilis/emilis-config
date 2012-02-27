@@ -37,6 +37,7 @@ imap <C-PageDown> :bn!<CR>
 
 com! Kwbd enew|bw # 
 com! WM w|make
+command -nargs=+ WMB w|!make <q-args> % > /dev/null &
 com! WJ w|jake
 " write, commit with message
 command -nargs=+ Wcm w|!git commit -m <q-args> %
