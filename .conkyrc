@@ -31,7 +31,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 
 # Minimum size of text area
-minimum_size 1200 760
+minimum_size 980 760
 
 # Maximum width
 maximum_width 1280
@@ -92,41 +92,41 @@ override_utf8_locale yes
 ##############################################
 
 TEXT
-${voffset 24}${offset 1010}${color 999999}Host:${tab 64}$nodename
-${offset 1010}Uptime:${tab 64}$uptime
-${offset 1010}
-${offset 1010}${color ffffff}SYSTEM:
-${offset 1010}${color ffee00}${cpugraph cpu0 20,232}
-${offset 1010}CPU 1:${tab 64}${cpu cpu1}%${tab 168}${freq_g 1}GHz
-${offset 1010}CPU 2:${tab 64}${cpu cpu2}%${tab 168}${freq_g 2}GHz
-${offset 1010}${color ff9900}${memgraph 20,232}
-${offset 1010}${membar 5,232}
-${offset 1010}RAM:${tab 64}$mem${tab 168}$memmax
-${offset 1010}${color 660000}Swap:${tab 64}$swap${tab 168}$swapmax
-${offset 1010}
-${offset 1010}${color ffffff}NETWORK:
-${offset 1010}${color 00ff00}${downspeedgraph wlan0 20,232}
-${offset 1010}Download:${tab 64}${downspeedf wlan0} kB/s
-${offset 1010}${color 0000ff}${upspeedgraph wlan0 20,232}
-${offset 1010}Upload:${tab 64}${upspeedf wlan0} kB/s
-${offset 1010}
-${offset 1010}${color ffffff}DISK:
-${offset 1010}${color 00ff00}${diskiograph_read sda 20,232}
-${offset 1010}Read:${tab 64}${diskio_read}
-${offset 1010}${color ff0000}${diskiograph_write sda 20,232}
-${offset 1010}Write:${tab 64}${diskio_write}
-${offset 1010}
-${offset 1010}${color ffffff}Usage:
-${offset 1010}${color 0000ff}${fs_bar 5,232 /}
-${offset 1010}/    ${tab 64}${fs_used /}${tab 168}${fs_size /}
-${offset 1010}free:${tab 64}${fs_free /}${tab 168}${fs_free_perc /}%
-${offset 1010}${color 00ff00}${fs_bar 5,232 /home}
-${offset 1010}/home${tab 64}${fs_used /home}${tab 168}${fs_size /home}
-${offset 1010}free:${tab 64}${fs_free /home}${tab 168}${fs_free_perc /home}%
+${voffset 24}${offset 750}${color 999999}Host:${tab 64}$nodename
+${offset 750}Uptime:${tab 64}$uptime
+${offset 750}
+${offset 750}${color ffffff}SYSTEM:
+${offset 750}${color ffee00}${cpugraph cpu0 20,232}
+${offset 750}CPU 1:${tab 64}${cpu cpu1}%${tab 148}${freq_g 1}GHz
+${offset 750}CPU 2:${tab 64}${cpu cpu2}%${tab 148}${freq_g 2}GHz
+${offset 750}${color ff9900}${memgraph 20,232}
+${offset 750}${membar 5,232}
+${offset 750}RAM:${tab 64}$mem${tab 148}$memmax
+${offset 750}${color 660000}Swap:${tab 64}$swap${tab 148}$swapmax
+${offset 750}
+${offset 750}${color ffffff}NETWORK:
+${offset 750}${color 00ff00}${downspeedgraph wlan0 20,232}
+${offset 750}Download:${tab 64}${downspeedf wlan0} kB/s
+${offset 750}${color 0000ff}${upspeedgraph wlan0 20,232}
+${offset 750}Upload:${tab 64}${upspeedf wlan0} kB/s
+${offset 750}
+${offset 750}${color ffffff}DISK:
+${offset 750}${color 00ff00}${diskiograph_read sda 20,232}
+${offset 750}Read:${tab 64}${diskio_read}
+${offset 750}${color ff0000}${diskiograph_write sda 20,232}
+${offset 750}Write:${tab 64}${diskio_write}
+${offset 750}
+${offset 750}${color ffffff}Usage:
+${offset 750}${color 0000ff}${fs_bar 5,232 /}
+${offset 750}/    ${tab 64}${fs_used /}${tab 148}${fs_size /}
+${offset 750}free:${tab 64}${fs_free /}${tab 148}${fs_free_perc /}%
+${offset 750}${color 00ff00}${fs_bar 5,232 /home}
+${offset 750}/home${tab 64}${fs_used /home}${tab 148}${fs_size /home}
+${offset 750}free:${tab 64}${fs_free /home}${tab 148}${fs_free_perc /home}%
 
 
 # ${voffset 10}${color cccccc}${font Sans:size=7}BAT:${battery_percent}%
-${voffset 8}${color 993300}${cpugraph cpu0 20,40}
+${voffset -32}${color 993300}${cpugraph cpu0 20,40}
 ${voffset -18}${color ffee66}${font Sans:size=7}⚒ ${cpu cpu0}%
 ${voffset -1}${color 006600}${downspeedgraph wlan0 20,40}
 ${voffset -18}${color 66ff66}${font Sans:size=8}↓${downspeedf wlan0}
