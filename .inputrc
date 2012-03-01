@@ -1,0 +1,4 @@
+$if term=xterm
+    "\e[1;3D":  "\C-d"
+$endif
+
