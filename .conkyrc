@@ -105,10 +105,10 @@ ${offset 750}RAM:${tab 64}$mem${tab 148}$memmax
 ${offset 750}${color 660000}Swap:${tab 64}$swap${tab 148}$swapmax
 ${offset 750}
 ${offset 750}${color ffffff}NETWORK:
-${offset 750}${color 00ff00}${downspeedgraph wlan0 20,232}
-${offset 750}Download:${tab 64}${downspeedf wlan0} kB/s
-${offset 750}${color 0000ff}${upspeedgraph wlan0 20,232}
-${offset 750}Upload:${tab 64}${upspeedf wlan0} kB/s
+${offset 750}${color 00ff00}${downspeedgraph wlan1 20,232}
+${offset 750}Download:${tab 64}${downspeedf wlan1} kB/s
+${offset 750}${color 0000ff}${upspeedgraph wlan1 20,232}
+${offset 750}Upload:${tab 64}${upspeedf wlan1} kB/s
 ${offset 750}
 ${offset 750}${color ffffff}DISK:
 ${offset 750}${color 00ff00}${diskiograph_read sda 20,232}
@@ -128,10 +128,10 @@ ${offset 750}free:${tab 64}${fs_free /home}${tab 148}${fs_free_perc /home}%
 # ${voffset 10}${color cccccc}${font Sans:size=7}BAT:${battery_percent}%
 ${voffset -32}${color 993300}${cpugraph cpu0 20,40}
 ${voffset -18}${color ffee66}${font Sans:size=7}⚒ ${cpu cpu0}%
-${voffset -1}${color 006600}${downspeedgraph wlan0 20,40}
-${voffset -18}${color 66ff66}${font Sans:size=8}↓${downspeedf wlan0}
-${voffset -2}${color 000066}${upspeedgraph wlan0 20,40}
-${voffset -20}${color 6666ff}${font Sans:size=8}↑${upspeedf wlan0}
+${voffset -1}${color 006600}${downspeedgraph wlan1 20,40}
+${voffset -18}${color 66ff66}${font Sans:size=8}↓${downspeedf wlan1}
+${voffset -2}${color 000066}${upspeedgraph wlan1 20,40}
+${voffset -20}${color 6666ff}${font Sans:size=8}↑${upspeedf wlan1}
 
 
 
