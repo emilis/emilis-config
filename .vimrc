@@ -35,6 +35,9 @@ imap <C-PageUp> <esc>:bp!<CR>
 map <C-PageDown> :bn!<CR>
 imap <C-PageDown> :bn!<CR>
 
+map <A-Right> :sh<CR>
+map <A-Left> :q<CR>
+
 com! Kwbd enew|bw # 
 com! WM w|make
 command -nargs=+ WMB w|!make <q-args> % > /dev/null &
