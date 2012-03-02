@@ -21,6 +21,7 @@ function! TopPadding()
     silent! leftabove 1 split __TopPadding__
     silent! setlocal buftype=nofile
     silent! setlocal nobuflisted
+    silent! setlocal noswapfile
     setlocal noma
     setlocal nocursorline
     setlocal nonumber
