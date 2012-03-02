@@ -12,6 +12,29 @@ set pastetoggle=<F12>
 " Colors:
 set t_Co=256
 colorscheme morning
+set foldcolumn=4
+au ColorScheme * highlight FoldColumn ctermbg=bg guibg=bg
+au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
+
+" Top padding:
+function! TopPadding()
+    silent! leftabove 1 split __TopPadding__
+    silent! setlocal buftype=nofile
+    silent! setlocal nobuflisted
+    setlocal noma
+    setlocal nocursorline
+    setlocal nonumber
+    silent! setlocal norelativenumber
+    wincmd j
+    au BufEnter __TopPadding__ nested call TopPaddingClose()
+endfunction
+function! TopPaddingClose()
+    if winnr() == winbufnr(bufnr("__TopPadding__"))
+        bdelete
+    endif
+endfunction
+command TopPadding call TopPadding()
+au VimEnter * nested call TopPadding()
 
 " Convenient options:
 syntax on
@@ -58,6 +81,7 @@ let Tlist_Show_One_File = 1
 let Tlist_Show_Menu = 1
 let Tlist_Highlight_Tag_On_BufEnter = 0
 let Tlist_Auto_Highlight_Tag = 0
+
 
 " Abbreviations:
 iab <expr> date» strftime("%FT%T%z")
