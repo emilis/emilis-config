@@ -23,4 +23,10 @@ alias ':e'='vim'
 alias ':WM'='make'
 alias lessc='nodejs /opt/lessc/bin/lessc'
 
-
+# git aliases
+alias gis='git status'
+alias gif='git diff'
+alias gdif='git diff'
+alias gicm='git commit -m'
+alias gicma='git commit -am'
+alias gicam='git commit -am'
