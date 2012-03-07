@@ -3,7 +3,10 @@
 fill="--- "
 
 reset_style='\[\033[00m\]'
-status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
+if [ -z "$VIM" ];
+then status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
+else status_style=$reset_style'\[\033[0;90;107m\]'
+fi
 prompt_style=$reset_style
 command_style=$reset_style'\[\033[1;29m\]' # bold black
 # Prompt variable:
