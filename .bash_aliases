@@ -28,4 +28,4 @@ alias gis='git status'
 alias gif='git diff'
 alias gic='git commit -m'
 alias gica='git commit -am'
-
+alias gil="git log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
