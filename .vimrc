@@ -44,7 +44,7 @@ set mouse=a
 
 " Custom filetypes:
 filetype on
-au BufNewFile,BufRead *.ejs set filetype=javascript
+au BufNewFile,BufRead *.ejs set filetype=ejs
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.cshtml set filetype=html
 
