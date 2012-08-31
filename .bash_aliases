@@ -29,3 +29,12 @@ alias gif='git diff'
 alias gic='git commit -m'
 alias gica='git commit -am'
 alias gil="git log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# mercurial aliases
+alias hgu='hg update'
+alias hgb='hg bookmark'
+alias hgs='hg bookmarks;hg status'
+alias hgraph='hg serve | sensible-browser http://localhost:8000/graph'
+hgif() {
+    hg diff -g --color always "$@" | less -SR
+}
