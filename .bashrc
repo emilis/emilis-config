@@ -58,6 +58,9 @@ xterm*|rxvt*)
 esac
 
 
+# Node.JS path:
+export NODE_PATH="/usr/local/lib/node_modules:$HOME/node_modules"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
