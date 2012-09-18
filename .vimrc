@@ -11,9 +11,10 @@ set pastetoggle=<F12>
 
 " Colors:
 set t_Co=256
-colorscheme morning
+colorscheme Tomorrow-Night
 set foldcolumn=4
-au ColorScheme * highlight FoldColumn ctermbg=bg guibg=bg
+au ColorScheme * highlight FoldColumn ctermbg=NONE guibg=NONE
+au ColorScheme * highlight StatusLineNC ctermbg=bg guibg=bg
 au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
 
 " Top padding:
@@ -89,4 +90,3 @@ let Tlist_Auto_Highlight_Tag = 0
 iab <expr> date» strftime("%FT%T%z")
 iab <expr> time» strftime("%T")
 iab <expr> now» strftime("%FT%T%z")
-
