@@ -18,9 +18,14 @@ alias l='ls -CF'
 # some cd aliases
 alias ..='cd ..'
 
+# du aliases
+alias duh='du -sh'
+alias duh1='du -h --max-depth=1'
+
 # dev aliases
 alias ':e'='vim'
 alias ':WM'='make'
+alias earlier='touch -d 1999-12-31'
 alias lessc='nodejs /opt/lessc/bin/lessc'
 
 # git aliases
