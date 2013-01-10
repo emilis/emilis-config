@@ -65,7 +65,7 @@ map <A-Right> :sh<CR>
 map <A-Left> :qall<CR>
 
 com! Kwbd enew|bw # 
-com! WM w|make
+com! WM w|make -i
 command -nargs=+ WMB w|!make <q-args> % > /dev/null &
 com! WJ w|jake
 " write, commit with message
