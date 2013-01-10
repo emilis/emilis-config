@@ -62,7 +62,7 @@ map <C-PageDown> :bn!<CR>
 imap <C-PageDown> :bn!<CR>
 
 map <A-Right> :sh<CR>
-map <A-Left> :q<CR>
+map <A-Left> :qall<CR>
 
 com! Kwbd enew|bw # 
 com! WM w|make
