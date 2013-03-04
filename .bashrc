@@ -60,8 +60,10 @@ xterm*|rxvt*)
 esac
 
 
-# Node.JS path:
-export NODE_PATH="/usr/local/lib/node_modules:$HOME/node_modules"
+# Node.JS config:
+if [ -f ~/.bash_node ]; then
+    . ~/.bash_node
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
