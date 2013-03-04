@@ -71,6 +71,24 @@ com! WJ w|jake
 " write, commit with message
 command -nargs=+ Wcm w|!git commit -m <q-args> %
 
+" Functions:
+
+" fill rest of line with characters
+function! Line80()
+    let tw =    80
+    let str =   '-'
+    " strip trailing spaces first
+    .s/[[:space:]]*$//
+    " calculate total number of 'str's to insert
+    let reps = (tw - col("$")) / len(str)
+    " insert them, if there's room, removing trailing spaces (though forcing
+    " there to be one)
+    if reps > 0
+        .s/$/\=(' '.repeat(str, reps))/
+    endif
+endfunction
+command Line80 call Line80()
+
 " Backups go to:
 set   backupdir=./.backup,.,/tmp
 set   directory=.,./.backup,/tmp
