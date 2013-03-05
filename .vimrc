@@ -12,10 +12,17 @@ set pastetoggle=<F12>
 " Colors:
 set t_Co=256
 colorscheme Tomorrow-Night
-set foldcolumn=4
+
+" Left padding:
+set foldcolumn=2
 au ColorScheme * highlight FoldColumn ctermbg=NONE guibg=NONE
 au ColorScheme * highlight StatusLineNC ctermbg=bg guibg=bg
 au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
+sign define dummy 
+function! ShowSignColumn()
+    execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+endfunction
+au BufEnter * nested call ShowSignColumn()
 
 " Top padding:
 function! TopPadding()
@@ -27,6 +34,7 @@ function! TopPadding()
     setlocal nocursorline
     setlocal nonumber
     silent! setlocal norelativenumber
+    execute 'sign unplace 9999 buffer=' . bufnr("__TopPadding__")
     wincmd j
     au BufEnter __TopPadding__ nested call TopPaddingClose()
 endfunction
