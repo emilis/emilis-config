@@ -59,18 +59,22 @@ au BufNewFile,BufRead *.json    set filetype=javascript
 au BufNewFile,BufRead *.less    set filetype=less
 
 " Key maps:
-map <F6> :bp!<CR>
-imap <F6> <esc>:bp!<CR> 
-map <F7> :bn!<CR>
-imap <F7> <esc>:bn!<CR>
+map     <F6>    :bp!<CR>
+imap    <F6>    <esc>:bp!<CR> 
+map     <F7>    :bn!<CR>
+imap    <F7>    <esc>:bn!<CR>
 
-map <C-PageUp> :bp!<CR>
-imap <C-PageUp> <esc>:bp!<CR>
-map <C-PageDown> :bn!<CR>
-imap <C-PageDown> :bn!<CR>
+map     <C-Up>      :bp!<CR>
+imap    <C-Up>      <esc>:bp!<CR>
+map     <C-Down>    :bn!<CR>
+imap    <C-Down>    :bn!<CR>
 
-map <A-Right> :sh<CR>
-map <A-Left> :qall<CR>
+map     <A-Right>   :sh<CR>
+map     <A-Left>    :qall<CR>
+map     <A-Up>      :GitGutterPrevHunk<CR>
+imap    <A-Up>      <esc>:GitGutterPrevHunk<CR>
+map     <A-Down>    :GitGutterNextHunk<CR>
+imap    <A-Down>    <esc>:GitGutterNextHunk<CR>
 
 com! Kwbd enew|bw # 
 com! WM w|make -i
