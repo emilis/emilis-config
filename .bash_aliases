@@ -21,7 +21,9 @@ alias ..='cd ..'
 
 # du aliases
 alias duh='du -sh'
-alias duh1='du -h --max-depth=1'
+duh1() {
+    du -h --max-depth=1 "$@" | sort -h
+}
 
 # dev aliases
 alias ':e'='vim'
