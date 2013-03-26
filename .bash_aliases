@@ -29,7 +29,6 @@ duh1() {
 alias ':e'='vim'
 alias ':WM'='make'
 alias earlier='touch -d 1999-12-31'
-alias lessc='nodejs /opt/lessc/bin/lessc'
 
 # git aliases
 alias gis='git status'
