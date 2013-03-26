@@ -61,6 +61,7 @@ draw_graph_borders no
 default_color white
 default_shade_color black
 default_outline_color white
+default_bar_size 220 10
 
 # Text alignment_ other possible values are commented
 alignment top_left
@@ -92,7 +93,8 @@ override_utf8_locale yes
 ##############################################
 
 TEXT
-${voffset 24}${offset 1280}${color 999999}Host:${tab 64}$nodename
+${voffset 5}${color 999999}
+# ${voffset 24}${offset 1280}${color 999999}Host:${tab 64}$nodename
 ${offset 1280}Uptime:${tab 64}$uptime
 ${offset 1280}
 ${offset 1280}${color ffffff}SYSTEM:
@@ -107,33 +109,42 @@ ${offset 1280}RAM:${tab 64}$mem${tab 168}$memmax
 ${offset 1280}${color 660000}Swap:${tab 64}$swap${tab 168}$swapmax
 ${offset 1280}
 ${offset 1280}${color ffffff}NETWORK:
-${offset 1280}${color 00ff00}${downspeedgraph wlan1 20,286}
+${offset 1280}${color 00cc00}${downspeedgraph wlan1 20,286}
 ${offset 1280}Download:${tab 64}${downspeedf wlan1} kB/s
-${offset 1280}${color 0000ff}${upspeedgraph wlan1 20,286}
+${offset 1280}${color 6666ff}${upspeedgraph wlan1 20,286}
 ${offset 1280}Upload:${tab 64}${upspeedf wlan1} kB/s
 ${offset 1280}
 ${offset 1280}${color ffffff}DISK:
-${offset 1280}${color 00ff00}${diskiograph_read sda 20,286}
+${offset 1280}${color 00cc00}${diskiograph_read sda 20,286}
 ${offset 1280}Read:${tab 64}${diskio_read}
 ${offset 1280}${color ff0000}${diskiograph_write sda 20,286}
 ${offset 1280}Write:${tab 64}${diskio_write}
 ${offset 1280}
 ${offset 1280}${color ffffff}Usage:
-${offset 1280}${color 0000ff}${fs_bar 5,286 /}
+${offset 1280}${color 6666ff}${fs_bar 5,286 /}
 ${offset 1280}/    ${tab 64}${fs_used /}${tab 168}${fs_size /}
 ${offset 1280}free:${tab 64}${fs_free /}${tab 168}${fs_free_perc /}%
-${offset 1280}${color 00ff00}${fs_bar 5,286 /home}
+${offset 1280}${color 00cc00}${fs_bar 5,286 /home}
 ${offset 1280}/home${tab 64}${fs_used /home}${tab 168}${fs_size /home}
 ${offset 1280}free:${tab 64}${fs_free /home}${tab 168}${fs_free_perc /home}%
+${voffset 10}
+${offset 1280}${color ff9900}${execibar 30 expr \( `xwinlogger-dd 0` \* 100 \) / \( `xwinlogger-dd` - `xwinlogger-dd 16` \) }   ${execi 30 expr `xwinlogger-dd 0` / 60 } min.
+${offset 1280}${color 00cc00}${execibar 30 expr \( `xwinlogger-dd 1` \* 100 \) / \( `xwinlogger-dd` - `xwinlogger-dd 16` \) }   ${execi 30 expr `xwinlogger-dd 1` / 60 } min.
+${offset 1280}${color 6666ff}${execibar 30 expr \( `xwinlogger-dd 2` \* 100 \) / \( `xwinlogger-dd` - `xwinlogger-dd 16` \) }   ${execi 30 expr `xwinlogger-dd 2` / 60 } min.
+${offset 1280}${color cc00cc}${execibar 30 expr \( `xwinlogger-dd 3` \* 100 \) / \( `xwinlogger-dd` - `xwinlogger-dd 16` \) }   ${execi 30 expr `xwinlogger-dd 3` / 60 } min.
+${offset 1280}${color 333333}${execibar 30 expr \( `xwinlogger-dd 16` \* 100 \) / `xwinlogger-dd` }   ${execi 30 expr `xwinlogger-dd 16` / 60 } min.
 
 
 # ${voffset 10}${color cccccc}${font Sans:size=7}BAT:${battery_percent}%
-${voffset 0}${color 993300}${cpugraph cpu0 20,40}
-${voffset -18}${color ffee66}${font Sans:size=7}⚒ ${cpu cpu0}%
+${voffset -106}${color 993300}${cpugraph cpu0 20,40}
+${voffset -18}${color ffee66}${font Sans:size=8} ⚒ ${cpu cpu0}%
 ${voffset -1}${color 006600}${downspeedgraph wlan1 20,40}
-${voffset -18}${color 66ff66}${font Sans:size=8}↓${downspeedf wlan1}
+${voffset -18}${color 66ff66}${font Sans:size=7} ↓${downspeedf wlan1}
 ${voffset -2}${color 000066}${upspeedgraph wlan1 20,40}
-${voffset -20}${color 6666ff}${font Sans:size=8}↑${upspeedf wlan1}
-
-
+${voffset -20}${color 6666ff}${font Sans:size=7} ↑${upspeedf wlan1}
+${voffset 10}${font Roboto:size=10:medium}${color ff9900} ${execi 30 expr `xwinlogger-dd 0` / 60 }
+${color 00cc00} ${execi 30 expr `xwinlogger-dd 1` / 60 }
+${color 6666ff} ${execi 30 expr `xwinlogger-dd 2` / 60 }
+${color cc00cc} ${execi 30 expr `xwinlogger-dd 3` / 60 }
+${color 333333} ${execi 30 expr `xwinlogger-dd 16` / 60 }
 
