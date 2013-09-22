@@ -25,10 +25,11 @@ duh1() {
     du -h --max-depth=1 "$@" | sort -h
 }
 
-# dev aliases
+# various aliases
 alias ':e'='vim'
 alias ':WM'='make'
 alias earlier='touch -d 1999-12-31'
+alias rbackup='rsync -ghlport'
 
 # git aliases
 alias gis='git status'
