@@ -55,8 +55,10 @@ set mouse=a
 filetype on
 au BufNewFile,BufRead *.cshtml  set filetype=html
 au BufNewFile,BufRead *.ejs     set filetype=ejs
+au BufNewFile,BufRead *.jsm     set filetype=javascript
 au BufNewFile,BufRead *.json    set filetype=javascript
 au BufNewFile,BufRead *.less    set filetype=less
+au BufNewFile,BufRead *.webapp  set filetype=javascript
 
 " Key maps:
 map     <F6>    :bp!<CR>
