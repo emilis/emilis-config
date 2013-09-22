@@ -79,7 +79,7 @@ map     <A-Down>    :GitGutterNextHunk<CR>
 imap    <A-Down>    <esc>:GitGutterNextHunk<CR>
 
 com! Kwbd enew|bw # 
-com! WM w|make -i
+com! WM w|make -j 4 -i
 command -nargs=+ WMB w|!make <q-args> % > /dev/null &
 com! WJ w|jake
 " write, commit with message
