@@ -55,6 +55,7 @@ set mouse=a
 filetype on
 au BufNewFile,BufRead *.cshtml  set filetype=html
 au BufNewFile,BufRead *.ejs     set filetype=ejs
+au BufNewFile,BufRead *.ino     set filetype=c
 au BufNewFile,BufRead *.jsm     set filetype=javascript
 au BufNewFile,BufRead *.json    set filetype=javascript
 au BufNewFile,BufRead *.less    set filetype=less
