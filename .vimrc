@@ -110,6 +110,7 @@ set   directory=.,./.backup,/tmp
 
 " TagList plugin options:
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
+let tlist_javascript_settings = 'javascript;f:function'
 let Tlist_Auto_Open = 0
 let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
