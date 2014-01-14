@@ -46,3 +46,6 @@ alias hgraph='hg serve | sensible-browser http://localhost:8000/graph'
 hgif() {
     hg diff -g --color always "$@" | less -SR
 }
+
+#node aliases
+alias node='env NODE_NO_READLINE=1 rlwrap -H "$HOME/.node-repl-history" node'
