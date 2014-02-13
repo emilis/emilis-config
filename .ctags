@@ -8,7 +8,7 @@
 --regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*[0-9]+/\5/,number/
 --regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*.+([,;=]|$)/\5/v,variable/
 --regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*[ \t]*([,;]|$)/\5/v,variable/
---regex-javascript=/function[ \t]+([A-Za-z0-9_$]+)[ \t]*\([^)]*\)/\1/f,function/
+"--regex-javascript=/function[ \t]+([A-Za-z0-9_$]+)[ \t]*\([^)]*\)/\1/f,function/
 
 --regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*\{/\2/p,object/
 --regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*function[ \t]*\(/\2/f,function/
