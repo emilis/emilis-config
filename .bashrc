@@ -85,6 +85,6 @@ fi
 
 
 # Tweaked prompt.
-if [ -n "$PS1" -a -f "$HOME/.bash_ps1" ]; then
+if [ -f "$HOME/.bash_ps1" ] && [[ $- == *i* ]]; then
     . "$HOME/.bash_ps1"
 fi
