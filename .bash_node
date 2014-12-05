@@ -1,5 +1,6 @@
 # NPM packages in homedir
-export NPM_PACKAGES="$HOME/.npm-packages"
+export NPM_PACKAGES="$HOME/.npm-packages"   # old style
+export NPM_CONFIG_PREFIX="$NPM_PACKAGES"    # new style
 
 # Tell our environment about user-installed node tools
 PATH="$NPM_PACKAGES/bin:$PATH"
