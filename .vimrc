@@ -11,13 +11,16 @@ set pastetoggle=<F12>
 
 " Colors:
 set t_Co=256
-colorscheme Tomorrow-Night
+colorscheme Tomorrow
+au ColorScheme * highlight SignColumn ctermbg=None guibg=None
+au ColorScheme * highlight StatusLineNC ctermbg=bg guibg=bg
+au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
+au ColorScheme * highlight StatusLine ctermbg=bg guibg=bg
+au ColorScheme * highlight StatusLine ctermfg=fg guifg=fg
 
 " Left padding:
 set foldcolumn=2
-au ColorScheme * highlight FoldColumn ctermbg=NONE guibg=NONE
-au ColorScheme * highlight StatusLineNC ctermbg=bg guibg=bg
-au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
+au ColorScheme * highlight FoldColumn ctermbg=None guibg=None
 sign define dummy 
 function! ShowSignColumn()
     execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
