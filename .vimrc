@@ -117,6 +117,9 @@ command LLine80 call Line80()
 set   backupdir=./.backup,.,/tmp
 set   directory=.,./.backup,/tmp
 
+" Explorer / Netrw options:
+let g:netrw_liststyle=3
+
 " TagList plugin options:
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
 let tlist_javascript_settings = 'javascript;f:function'
