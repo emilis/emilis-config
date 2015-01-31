@@ -107,6 +107,8 @@ function! Line80()
     if reps > 0
         .s/$/\=(' '.repeat(str, reps))/
     endif
+    call feedkeys( 'o', 'n' )
+    call feedkeys( "\b\b\n", 'i' )
 endfunction
 command Line80 call Line80()
 command LLine80 call Line80()
