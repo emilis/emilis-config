@@ -49,3 +49,4 @@ hgif() {
 
 #node aliases
 alias node='env NODE_NO_READLINE=1 rlwrap -H "$HOME/.node-repl-history" node'
+alias ntree='tree -I node_modules'
