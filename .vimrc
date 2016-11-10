@@ -11,7 +11,7 @@ set pastetoggle=<F12>
 
 " Colors:
 set t_Co=256
-colorscheme Tomorrow-Night
+colorscheme emilis
 au ColorScheme * highlight SignColumn ctermbg=None guibg=None
 au ColorScheme * highlight StatusLineNC ctermbg=bg guibg=bg
 au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
