@@ -27,28 +27,6 @@ function! ShowSignColumn()
 endfunction
 au BufEnter * nested call ShowSignColumn()
 
-" Top padding:
-function! TopPadding()
-    silent! leftabove 1 split __TopPadding__
-    silent! setlocal buftype=nofile
-    silent! setlocal nobuflisted
-    silent! setlocal noswapfile
-    setlocal noma
-    setlocal nocursorline
-    setlocal nonumber
-    silent! setlocal norelativenumber
-    execute 'sign unplace 9999 buffer=' . bufnr("__TopPadding__")
-    wincmd j
-    au BufEnter __TopPadding__ nested call TopPaddingClose()
-endfunction
-function! TopPaddingClose()
-    if winnr() == winbufnr(bufnr("__TopPadding__"))
-        bdelete
-    endif
-endfunction
-command TopPadding call TopPadding()
-au VimEnter * nested call TopPadding()
-
 " Convenient options:
 syntax on
 set wildmenu
@@ -119,18 +97,6 @@ set   directory=.,./.backup,/tmp
 
 " Explorer / Netrw options:
 let g:netrw_liststyle=3
-
-" TagList plugin options:
-let tlist_php_settings = 'php;c:class;d:constant;f:function'
-let tlist_javascript_settings = 'javascript;f:function'
-let Tlist_Auto_Open = 0
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Show_One_File = 1
-let Tlist_Show_Menu = 1
-let Tlist_Highlight_Tag_On_BufEnter = 0
-let Tlist_Auto_Highlight_Tag = 0
-
 
 " Abbreviations:
 iab <expr> date» strftime("%FT%T%z")
