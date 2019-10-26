@@ -3,3 +3,4 @@
 .vim/ftdetect/markdown.vim
 .vim/ftplugin/markdown.vim
 .vim/syntax/markdown.vim
+.vim/pack/

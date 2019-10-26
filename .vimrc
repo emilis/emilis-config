@@ -11,16 +11,12 @@ set pastetoggle=<F12>
 
 " Colors:
 set t_Co=256
-colorscheme emilis
-au ColorScheme * highlight SignColumn ctermbg=None guibg=None
-au ColorScheme * highlight StatusLineNC ctermbg=bg guibg=bg
-au ColorScheme * highlight StatusLineNC ctermfg=bg guifg=bg
-au ColorScheme * highlight StatusLine ctermbg=bg guibg=bg
-au ColorScheme * highlight StatusLine ctermfg=fg guifg=fg
+colorscheme default
+au ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
 
 " Left padding:
 set foldcolumn=2
-au ColorScheme * highlight FoldColumn ctermbg=None guibg=None
+au ColorScheme * highlight FoldColumn ctermbg=NONE guibg=NONE
 sign define dummy 
 function! ShowSignColumn()
     execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
@@ -41,9 +37,9 @@ au BufNewFile,BufRead *.ino     set filetype=c
 au BufNewFile,BufRead *.jsm     set filetype=javascript
 au BufNewFile,BufRead *.json    set filetype=javascript
 au BufNewFile,BufRead *.less    set filetype=less
+au BufNewFile,BufRead *.mjs     set filetype=javascript
 au BufNewFile,BufRead *.webapp  set filetype=javascript
 au BufNewFile,BufRead *.mpc     set filetype=mpc
-au BufNewFile,BufRead *.html.twig   set filetype=html
 
 " Key maps:
 map     <F6>    :bp!<CR>
@@ -70,6 +66,13 @@ com! WJ w|jake
 " write, commit with message
 command -nargs=+ Wcm w|!git commit -m <q-args> %
 
+""" ALE Fixers:
+let g:ale_fixers = {
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ 'javascript': ['eslint'],
+\ 'sass': ['sasslint'],
+\}
+
 " Functions:
 
 " fill rest of line with characters
@@ -86,7 +89,6 @@ function! Line80()
         .s/$/\=(' '.repeat(str, reps))/
     endif
     call feedkeys( 'o', 'n' )
-    call feedkeys( "\b\b\n", 'i' )
 endfunction
 command Line80 call Line80()
 command LLine80 call Line80()
