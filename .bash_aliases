@@ -50,3 +50,6 @@ hgif() {
 
 #node aliases
 alias ntree='tree -I node_modules'
+
+#yt-dl aliases
+alias yt-dl-urls='yt-dl -a urls.txt --download-archive=download-archive.txt'

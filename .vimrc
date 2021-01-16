@@ -1,3 +1,6 @@
+" Modules to load
+runtime ftplugin/man.vim
+
 " Tabs:
 set tabstop=4
 set shiftwidth=4

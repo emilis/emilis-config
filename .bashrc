@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 export EDITOR=/usr/bin/vim
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -59,11 +64,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-
-# Node.JS config:
-if [ -f ~/.bash_node ]; then
-    . ~/.bash_node
-fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
