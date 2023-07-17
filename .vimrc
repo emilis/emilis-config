@@ -1,6 +1,3 @@
-" Modules to load
-runtime ftplugin/man.vim
-
 " Tabs:
 set tabstop=4
 set shiftwidth=4
@@ -16,6 +13,8 @@ set pastetoggle=<F12>
 set t_Co=256
 colorscheme default
 au ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+au ColorScheme default highlight Comment ctermfg=DarkGray
+au ColorScheme default highlight jsIdentifier ctermfg=DarkBlue
 
 " Left padding:
 set foldcolumn=2
@@ -31,43 +30,68 @@ syntax on
 set wildmenu
 set mouse=a
 
+au VimLeavePre * if v:this_session != '' | exec 'mks! ' . v:this_session | endif
+
 " Custom filetypes:
 filetype on
-au BufNewFile,BufRead *.cshtml  set filetype=html
-au BufNewFile,BufRead *.ejs     set filetype=ejs
-au BufNewFile,BufRead *.jst     set filetype=ejs
-au BufNewFile,BufRead *.ino     set filetype=c
-au BufNewFile,BufRead *.jsm     set filetype=javascript
-au BufNewFile,BufRead *.json    set filetype=javascript
-au BufNewFile,BufRead *.less    set filetype=less
-au BufNewFile,BufRead *.mjs     set filetype=javascript
-au BufNewFile,BufRead *.webapp  set filetype=javascript
-au BufNewFile,BufRead *.mpc     set filetype=mpc
+au BufNewFile,BufRead *.jsx     set filetype=javascript
+autocmd FileType yaml,yml setlocal ts=4 sts=4 sw=4 expandtab
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'js': ['eslint'],
+\   'jsx': ['eslint'],
+\}
+let g:ale_linters_ignore = {
+\   'typescript': ['eslint'],
+\   'typescriptreact': ['eslint'],
+\}
+
+let g:polyglot_disabled = ['autoindent', 'js']
+" let g:polyglot_disabled = ['js', 'jsx']
+
+" coc.nvim config --------------------------------------------------------------
+
+let g:coc_disable_startup_warning = 1
+
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
+inoremap <silent><expr> <c-@> coc#refresh()
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" END OF coc.nvim config -------------------------------------------------------
 
 " Key maps:
-map     <F6>    :bp!<CR>
-imap    <F6>    <esc>:bp!<CR> 
-map     <F7>    :bn!<CR>
-imap    <F7>    <esc>:bn!<CR>
-
-map     <C-Up>      :bp!<CR>
-imap    <C-Up>      <esc>:bp!<CR>
-map     <C-Down>    :bn!<CR>
-imap    <C-Down>    :bn!<CR>
-
 map     <A-Right>   :sh<CR>
 map     <A-Left>    :qall<CR>
-map     <A-Up>      :GitGutterPrevHunk<CR>
-imap    <A-Up>      <esc>:GitGutterPrevHunk<CR>
-map     <A-Down>    :GitGutterNextHunk<CR>
-imap    <A-Down>    <esc>:GitGutterNextHunk<CR>
 
 com! Kwbd enew|bw # 
 com! WM w|make -j 4 -i
-command -nargs=+ WMB w|!make <q-args> % > /dev/null &
-com! WJ w|jake
-" write, commit with message
-command -nargs=+ Wcm w|!git commit -m <q-args> %
+" command -nargs=+ WMB w|!make <q-args> % > /dev/null &
 
 """ ALE Fixers:
 let g:ale_fixers = {
@@ -75,6 +99,15 @@ let g:ale_fixers = {
 \ 'javascript': ['eslint'],
 \ 'sass': ['sasslint'],
 \}
+
+" Commands:
+
+com! CheckHighlightUnderCursor echo {l,c,n ->
+    \   'hi<'    . synIDattr(synID(l, c, 1), n)             . '> '
+    \  .'trans<' . synIDattr(synID(l, c, 0), n)             . '> '
+    \  .'lo<'    . synIDattr(synIDtrans(synID(l, c, 1)), n) . '> '
+    \ }(line("."), col("."), "name")
+
 
 " Functions:
 
@@ -102,8 +135,3 @@ set   directory=.,./.backup,/tmp
 
 " Explorer / Netrw options:
 let g:netrw_liststyle=3
-
-" Abbreviations:
-iab <expr> date» strftime("%FT%T%z")
-iab <expr> time» strftime("%T")
-iab <expr> now» strftime("%FT%T%z")
